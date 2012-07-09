@@ -13,3 +13,18 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore bundled gems.
+/vendor/bundle
+
+# Ignore a database config.
+/config/database.yml
+
+# Ignore a rbenv setting.
+.rbenv-version
+
+# Ignore .DS_Store
+.DS_Store
+
+# Ignore foreman environment file
+.env
