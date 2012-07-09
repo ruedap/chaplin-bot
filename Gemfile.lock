@@ -2,6 +2,26 @@ GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.2.3)
+    data_objects (0.10.3)
+      addressable (~> 2.1)
+    dm-core (1.0.2)
+      addressable (~> 2.2)
+      extlib (~> 0.9.15)
+    dm-do-adapter (1.0.2)
+      data_objects (~> 0.10.2)
+      dm-core (~> 1.0.2)
+    dm-migrations (1.0.2)
+      dm-core (~> 1.0.2)
+    dm-postgres-adapter (1.0.2)
+      dm-do-adapter (~> 1.0.2)
+      do_postgres (~> 0.10.2)
+    dm-validations (1.0.2)
+      dm-core (~> 1.0.2)
+    dm-validations-i18n (0.3.1)
+      dm-validations (>= 1.0.2)
+    do_postgres (0.10.3)
+      data_objects (= 0.10.3)
+    extlib (0.9.15)
     faraday (0.5.4)
       addressable (~> 2.2.2)
       multipart-post (~> 1.1.0)
@@ -30,5 +50,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dm-core
+  dm-migrations
+  dm-postgres-adapter
+  dm-validations
+  dm-validations-i18n
   sinatra
   twitter
