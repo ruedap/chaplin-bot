@@ -18,7 +18,7 @@ end
 group :development do
   gem 'annotate', '~>2.4.1.beta1'
   gem 'awesome_print'
-  gem 'pry-doc'
+  # gem 'pry-doc'
   gem 'pry-rails'
   gem 'rails-erd'
   gem 'rails_best_practices'
