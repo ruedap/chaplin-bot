@@ -4,6 +4,7 @@ gem 'rails', '3.2.6'
 gem 'pg', '~> 0.14.0'
 
 gem 'jquery-rails'
+gem 'twitter'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
