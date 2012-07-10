@@ -69,10 +69,49 @@ CREATE TABLE schema_migrations (
 
 
 --
+-- Name: tweets; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tweets (
+    id integer NOT NULL,
+    remark_id integer NOT NULL,
+    tweet_at time without time zone,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: tweets_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tweets_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: tweets_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tweets_id_seq OWNED BY tweets.id;
+
+
+--
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY remarks ALTER COLUMN id SET DEFAULT nextval('remarks_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tweets ALTER COLUMN id SET DEFAULT nextval('tweets_id_seq'::regclass);
 
 
 --
@@ -81,6 +120,14 @@ ALTER TABLE ONLY remarks ALTER COLUMN id SET DEFAULT nextval('remarks_id_seq'::r
 
 ALTER TABLE ONLY remarks
     ADD CONSTRAINT remarks_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: tweets_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tweets
+    ADD CONSTRAINT tweets_pkey PRIMARY KEY (id);
 
 
 --
@@ -99,3 +146,5 @@ INSERT INTO schema_migrations (version) VALUES ('20120710155252');
 INSERT INTO schema_migrations (version) VALUES ('20120710162859');
 
 INSERT INTO schema_migrations (version) VALUES ('20120710171349');
+
+INSERT INTO schema_migrations (version) VALUES ('20120710172540');
