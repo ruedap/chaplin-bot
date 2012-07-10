@@ -1,5 +1,5 @@
 class Tweet < ActiveRecord::Base
-  attr_accessible :remark_id, :tweet_at
+  attr_accessible :remark_id, :tweeted_at
   belongs_to :remark
 
   def self.shuffle_tweet
@@ -12,7 +12,7 @@ class Tweet < ActiveRecord::Base
 
   def self.empty?
     return true if Tweet.count.zero?
-    return true if Tweet.where(tweet_at: nil).count.zero?
+    return true if Tweet.where(tweeted_at: nil).count.zero?
 
     return false
   end
@@ -24,14 +24,14 @@ class Tweet < ActiveRecord::Base
   end
 
   def self.update_tweet
-    tweet = Tweet.where(tweet_at: nil).order(:id).first
+    tweet = Tweet.where(tweeted_at: nil).order(:id).first
 
     configure_twitter
     result = update_twitter(tweet.remark.phrase.chomp)
     return unless result
 
     puts "TWEET: #{result.text}"
-    tweet.tweet_at = Time.zone.now
+    tweet.tweeted_at = Time.zone.now
     tweet.save
   end
 
