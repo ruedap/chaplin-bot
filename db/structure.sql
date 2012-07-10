@@ -36,7 +36,8 @@ CREATE TABLE remarks (
     id integer NOT NULL,
     phrase character varying(140) NOT NULL,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    tweet_number integer DEFAULT 0 NOT NULL
 );
 
 
@@ -95,3 +96,5 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 --
 
 INSERT INTO schema_migrations (version) VALUES ('20120710155252');
+
+INSERT INTO schema_migrations (version) VALUES ('20120710162859');
