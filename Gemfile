@@ -13,6 +13,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'pit'
   gem 'rspec-rails', '~> 2.11.0'
 end
 
