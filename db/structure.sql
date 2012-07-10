@@ -75,7 +75,7 @@ CREATE TABLE schema_migrations (
 CREATE TABLE tweets (
     id integer NOT NULL,
     remark_id integer NOT NULL,
-    tweet_at time without time zone,
+    tweet_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
