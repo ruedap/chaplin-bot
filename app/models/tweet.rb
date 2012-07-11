@@ -11,20 +11,20 @@ class Tweet < ActiveRecord::Base
   private
 
   def self.empty?
-    return true if Tweet.count.zero?
-    return true if Tweet.where(tweeted_at: nil).count.zero?
+    return true if self.count.zero?
+    return true if self.where(tweeted_at: nil).count.zero?
 
     return false
   end
 
   def self.insert_all_remarks
     Remark.all.shuffle.each do |remark|
-      Tweet.create(remark_id: remark.id)
+      self.create(remark_id: remark.id)
     end
   end
 
   def self.update_tweet
-    tweet = Tweet.where(tweeted_at: nil).order(:id).first
+    tweet = self.where(tweeted_at: nil).order(:id).first
 
     configure_twitter
     result = update_twitter(tweet.remark.phrase.chomp)
