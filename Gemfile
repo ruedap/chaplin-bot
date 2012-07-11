@@ -4,6 +4,7 @@ gem 'rails', '3.2.6'
 gem 'pg', '~> 0.14.0'
 
 gem 'jquery-rails'
+gem 'thin', '~> 1.3.1'
 gem 'twitter'
 
 group :assets do
@@ -20,7 +21,7 @@ end
 group :development do
   gem 'annotate', '~>2.4.1.beta1'
   gem 'awesome_print'
-  # gem 'pry-doc'
+  gem 'foreman', '~> 0.46.0'
   gem 'pry-rails'
   gem 'rails-erd'
   gem 'rails_best_practices'
