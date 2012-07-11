@@ -28,3 +28,6 @@
 
 # Ignore foreman environment file
 .env
+
+# Ignore ERD.pdf
+/ERD.pdf
