@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.8'
 gem 'pg', '~> 0.14.0'
 
-gem 'jquery-rails'
-gem 'thin', '~> 1.3.1'
-gem 'twitter'
+gem 'jquery-rails', '~> 2.1.3'
+gem 'thin', '~> 1.5.0'
+gem 'twitter', '~> 4.1.2'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
