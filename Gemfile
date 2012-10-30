@@ -4,7 +4,7 @@ gem 'rails', '3.2.8'
 gem 'pg', '~> 0.14.0'
 
 gem 'jquery-rails'
-gem 'thin', '~> 1.3.1'
+gem 'thin', '~> 1.5.0'
 gem 'twitter'
 
 group :assets do
