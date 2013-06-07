@@ -1,6 +1,7 @@
 # Chaplin
 Twitter bot for Chaplin's wise remarks.
 
+
 ## Generate
 ### Add schema information to models (Run annotate)
     $ bundle exec annotate --show-indexes --exclude tests,fixtures
@@ -10,12 +11,14 @@ Twitter bot for Chaplin's wise remarks.
     $ bundle exec rake erd
     $ open ERD.pdf
 
+
 ## Test
 ### Run migration
     $ bundle exec rake db:migrate && bundle exec rake db:test:prepare
 
 ### Run rspec
     $ bundle exec rake spec
+
 
 ## Deploy
 ### Heroku application settings
@@ -32,3 +35,7 @@ Twitter bot for Chaplin's wise remarks.
 ### Heroku scheduler settings
     $ heroku addons:add scheduler:standard
     $ heroku addons:open scheduler
+
+
+## License
+http://ruedap.mit-license.org/2011
