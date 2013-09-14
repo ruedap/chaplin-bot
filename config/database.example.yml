@@ -16,9 +16,7 @@ development:
   adapter: postgresql
   encoding: unicode
   database: chaplin_development
-  pool: 5
-  username: __USERNAME__
-  password:
+  username: postgres
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -42,15 +40,10 @@ test:
   adapter: postgresql
   encoding: unicode
   database: chaplin_test
-  pool: 5
-  username: __USERNAME__
-  password:
-  min_messages: WARNING
+  username: postgres
 
 production:
   adapter: postgresql
   encoding: unicode
   database: chaplin_production
-  pool: 5
-  username: __USERNAME__
-  password:
+  username: postgres
