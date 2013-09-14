@@ -1,4 +1,4 @@
-# Chaplin [![Build Status](https://travis-ci.org/ruedap/chaplin.png?branch=master)](https://travis-ci.org/ruedap/chaplin)
+# Chaplin [![Build Status](https://travis-ci.org/ruedap/chaplin.png?branch=master)](https://travis-ci.org/ruedap/chaplin) [![Dependency Status](https://gemnasium.com/ruedap/chaplin.png)](https://gemnasium.com/ruedap/chaplin)
 
 Twitter bot for Chaplin's wise remarks (Japanese).
 
