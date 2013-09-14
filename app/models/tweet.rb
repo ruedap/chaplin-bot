@@ -1,5 +1,4 @@
 class Tweet < ActiveRecord::Base
-  attr_accessible :remark_id, :tweeted_at
   belongs_to :remark
 
   def self.shuffle_tweet
