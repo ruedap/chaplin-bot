@@ -3,13 +3,14 @@
 Twitter bot for Chaplin's wise remarks (Japanese).
 
 [![chaplin](https://dl.dropboxusercontent.com/u/281168/images/github-chaplin-readme.jpg)](http://drnorth.wordpress.com/2011/04/16/picture-of-the-week-73-charlie-chaplin-colour-portraits-by-charles-c-zoller/)
+(Portraits by Charles C. Zoller)
 
 ## Generate
 
-### Add schema information to models (Run annotate)
+### Add schema information to models
     $ bundle exec annotate --show-indexes --exclude tests,fixtures
 
-### Generate entity-relationship diagram (Run erd)
+### Generate entity-relationship diagram
     $ brew install cairo pango graphviz
     $ bundle exec rake erd
     $ open ERD.pdf
@@ -17,10 +18,10 @@ Twitter bot for Chaplin's wise remarks (Japanese).
 
 ## Test
 
-### Run migration
+### Migration
     $ bundle exec rake db:migrate && bundle exec rake db:test:prepare
 
-### Run rspec
+### RSpec
     $ bundle exec rake spec
 
 
