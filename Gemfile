@@ -2,29 +2,21 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.2'
 gem 'pg', '0.17.0'
 
-gem 'jquery-rails', '~> 3.0.4'
+gem 'jquery-rails', '3.0.4'
+gem 'sass-rails', '4.0.1'
+gem 'coffee-rails', '4.0.1'
+gem 'uglifier', '2.4.0'
+
 gem 'thin', '~> 1.5.0'
 gem 'twitter', '~> 4.8.1'
 
-group :assets do
-  gem 'sass-rails', '~> 4.0.0'
-  gem 'coffee-rails', '~> 4.0.0'
-  gem 'uglifier', '~> 2.2.1'
-end
-
-group :development, :test do
-  gem 'pit'
-  gem 'rspec-rails', '~> 2.14.0'
-end
-
 group :development do
-  gem 'annotate'
-  gem 'awesome_print'
-  gem 'foreman'
-  gem 'pry-rails'
-  gem 'rails-erd'
-  gem 'rails_best_practices'
+  gem 'annotate', '2.6.1'
+  gem 'awesome_print', '1.2.0'
+  gem 'pry-rails', '0.3.2'
+
+  gem 'rspec-rails', '~> 2.14.0'
 end
