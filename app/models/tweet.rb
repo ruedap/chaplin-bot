@@ -52,7 +52,7 @@ class Tweet < ActiveRecord::Base
       Pit.get('chaplin_staging').each { |key, value| ENV["#{key}"] = "#{value}" }
     end
 
-    Twitter.configure do |config|
+    Twitter::REST::Client.new do |config|
       config.consumer_key       = ENV['TWITTER_CONSUMER_KEY']
       config.consumer_secret    = ENV['TWITTER_CONSUMER_SECRET']
       config.oauth_token        = ENV['TWITTER_OAUTH_TOKEN']
