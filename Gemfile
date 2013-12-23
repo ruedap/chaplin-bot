@@ -10,7 +10,7 @@ gem 'sass-rails', '4.0.1'
 gem 'coffee-rails', '4.0.1'
 gem 'uglifier', '2.4.0'
 
-gem 'thin', '~> 1.5.0'
+gem 'thin', '1.6.1'
 gem 'twitter', '~> 4.8.1'
 
 group :development do
