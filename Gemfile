@@ -17,6 +17,7 @@ group :development do
   gem 'annotate', '2.6.1'
   gem 'awesome_print', '1.2.0'
   gem 'pry-rails', '0.3.2'
+  gem 'figaro', '0.7.0'
 
   gem 'rspec-rails', '~> 2.14.0'
 end

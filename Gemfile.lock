@@ -51,6 +51,9 @@ GEM
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     hike (1.2.3)
     http (0.5.0)
       http_parser.rb
@@ -156,6 +159,7 @@ DEPENDENCIES
   annotate (= 2.6.1)
   awesome_print (= 1.2.0)
   coffee-rails (= 4.0.1)
+  figaro (= 0.7.0)
   jquery-rails (= 3.0.4)
   pg (= 0.17.0)
   pry-rails (= 0.3.2)
