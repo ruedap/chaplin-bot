@@ -13,6 +13,10 @@ gem 'uglifier', '2.4.0'
 gem 'thin', '1.6.1'
 gem 'twitter', '5.3.0'
 
+group :production, :staging do
+  gem 'rails_12factor', '0.0.2' # for Heroku assets precompile
+end
+
 group :development do
   gem 'annotate', '2.6.1'
   gem 'awesome_print', '1.2.0'
