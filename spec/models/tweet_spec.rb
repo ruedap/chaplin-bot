@@ -13,16 +13,18 @@ describe Tweet do
 
   describe '.empty?' do
     context 'with before reset' do
-      it 'returns true' do
+      it 'must empty' do
         expect(described_class.empty?).to be_true
+        expect(described_class.count).to eq(0)
       end
     end
 
     context 'with after reset' do
       before { described_class.reset(Remark.all) }
 
-      it 'returns false' do
+      it 'msut not empty' do
         expect(described_class.empty?).to be_false
+        expect(described_class.count).to eq(31)
       end
     end
   end
@@ -31,9 +33,13 @@ describe Tweet do
     before { described_class.reset(Remark.all) }
 
     it 'returns latest remark' do
-      expect(described_class.latest.id).to eq(1)
+      expect(described_class.latest.remark.id).to eq(1)
       Tweet.first.used
-      expect(described_class.latest.id).to eq(2)
+      expect(described_class.latest.remark.id).to eq(2)
     end
+  end
+
+  describe '#used' do
+    pending
   end
 end
