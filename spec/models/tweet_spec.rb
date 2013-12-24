@@ -26,4 +26,14 @@ describe Tweet do
       end
     end
   end
+
+  describe '.latest' do
+    before { described_class.reset(Remark.all) }
+
+    it 'returns latest remark' do
+      expect(described_class.latest.id).to eq(1)
+      Tweet.first.used
+      expect(described_class.latest.id).to eq(2)
+    end
+  end
 end
