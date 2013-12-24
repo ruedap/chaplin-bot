@@ -6,6 +6,8 @@ describe Tweet do
 
     it 'returns 31' do
       expect(described_class.all.count).to eq(31)
+      described_class.reset(Remark.all)
+      expect(described_class.all.count).to eq(31)
     end
   end
 
