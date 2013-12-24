@@ -1,4 +1,6 @@
-# coding: utf-8
+# Reset table
+Remark.delete_all
+Tweet.delete_all
 
 phrases = <<-EOF.split("\n")
 私の最高傑作は次回作だ。
@@ -34,11 +36,7 @@ phrases = <<-EOF.split("\n")
 "You?" "You can see now?" "Yes, I can see now."
 EOF
 
-if Remark.count == 0
-  puts 'Creating remarks'
-  phrases.each do |phrase|
-    Remark.create!(phrase: phrase)
-  end
-else
-  puts 'Skipping remarks'
+phrases.each do |phrase|
+  Remark.create!(phrase: phrase)
 end
+puts 'Created remarks'

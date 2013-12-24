@@ -1,58 +1,57 @@
+# Tweet class
 class Tweet < ActiveRecord::Base
   belongs_to :remark
 
   def self.shuffle_tweet
-    insert_all_remarks if empty?
-
+    reset(Remark.all.shuffle) if empty?
     update_tweet
+  end
+
+  def self.empty?
+    count.zero? && where(tweeted_at: nil).count.zero?
+  end
+
+  def self.reset(remarks)
+    delete_all
+    remarks.each { |remark| create(remark_id: remark.id) }
+  end
+
+  def self.latest
+    where(tweeted_at: nil).order(:id).first
+  end
+
+  def used
+    self.tweeted_at = Time.zone.now
+    save
+  end
+
+  def text
+    remark.phrase
   end
 
   private
 
-  def self.empty?
-    return true if self.count.zero?
-    return true if self.where(tweeted_at: nil).count.zero?
-
-    return false
-  end
-
-  def self.insert_all_remarks
-    Remark.all.shuffle.each do |remark|
-      self.create(remark_id: remark.id)
-    end
-  end
-
   def self.update_tweet
-    tweet = self.where(tweeted_at: nil).order(:id).first
+    twitter = configure_twitter
+    return unless twitter
 
-    configure_twitter
-    result = update_twitter(tweet.remark.phrase.chomp)
+    tweet = latest
+    result = update_twitter(twitter, tweet.text)
     return unless result
 
     puts "TWEET: #{result.text}"
-    tweet.tweeted_at = Time.zone.now
-    tweet.save
+    tweet.used
   end
 
-  def self.update_twitter(text)
-    if Rails.env.development?
-      text = text[0..135]
-      suffix = Time.now.to_i.to_s[-4..-1]
-      text += suffix
-    end
-
-    Twitter.update(text)
+  def self.update_twitter(twitter, text)
+    twitter.update(text)
   rescue => e
     puts "ERROR: #{e.message}"
     nil
   end
 
   def self.configure_twitter
-    if Rails.env.development? || Rails.env.test?
-      Pit.get('chaplin_staging').each { |key, value| ENV["#{key}"] = "#{value}" }
-    end
-
-    Twitter.configure do |config|
+    Twitter::REST::Client.new do |config|
       config.consumer_key       = ENV['TWITTER_CONSUMER_KEY']
       config.consumer_secret    = ENV['TWITTER_CONSUMER_SECRET']
       config.oauth_token        = ENV['TWITTER_OAUTH_TOKEN']

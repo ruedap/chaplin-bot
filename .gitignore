@@ -31,3 +31,6 @@
 
 # Ignore ERD.pdf
 /ERD.pdf
+
+# Ignore application configuration
+/config/application.yml
