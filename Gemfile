@@ -11,7 +11,7 @@ gem 'coffee-rails', '4.0.1'
 gem 'uglifier', '2.4.0'
 
 gem 'thin', '1.6.1'
-gem 'twitter', '5.3.1'
+gem 'twitter', '5.4.1'
 
 group :production, :staging do
   gem 'rails_12factor', '0.0.2' # for Heroku assets precompile
