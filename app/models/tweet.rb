@@ -8,7 +8,7 @@ class Tweet < ActiveRecord::Base
   end
 
   def self.empty?
-    count.zero? && where(tweeted_at: nil).count.zero?
+    count.zero? || where(tweeted_at: nil).count.zero?
   end
 
   def self.reset(remarks)
