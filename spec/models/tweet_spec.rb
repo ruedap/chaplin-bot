@@ -15,7 +15,6 @@ describe Tweet do
     context 'with before reset' do
       it 'must empty' do
         expect(described_class.empty?).to be_true
-        expect(described_class.count).to eq(0)
       end
     end
 
@@ -24,7 +23,17 @@ describe Tweet do
 
       it 'msut not empty' do
         expect(described_class.empty?).to be_false
-        expect(described_class.count).to eq(31)
+      end
+    end
+
+    context 'with after reset and all used' do
+      before do
+        described_class.reset(Remark.all)
+        described_class.find_each { |t| t.used }
+      end
+
+      it 'msut not empty' do
+        expect(described_class.empty?).to be_true
       end
     end
   end
