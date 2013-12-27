@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-- 2.0.0
+- 2.1.0
 bundler_args: --without development production staging
 before_script:
 - cp config/database.example.yml config/database.yml
@@ -19,4 +19,4 @@ deploy:
     master: chaplin
     staging: chaplin-staging
   on:
-    rvm: 2.0.0
+    rvm: 2.1.0
