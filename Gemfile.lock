@@ -43,7 +43,6 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     daemons (1.1.9)
-    descendants_tracker (0.0.3)
     diff-lcs (1.2.5)
     equalizer (0.0.9)
     erubis (2.7.0)
@@ -143,10 +142,9 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    twitter (5.6.0)
+    twitter (5.7.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
-      descendants_tracker (~> 0.0.3)
       equalizer (~> 0.0.9)
       faraday (~> 0.9.0)
       http (~> 0.5.0)
@@ -176,5 +174,5 @@ DEPENDENCIES
   rspec-rails (= 2.14.1)
   sass-rails (= 4.0.1)
   thin (= 1.6.1)
-  twitter (= 5.6.0)
+  twitter (= 5.7.0)
   uglifier (= 2.4.0)
