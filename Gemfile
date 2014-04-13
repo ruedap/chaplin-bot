@@ -11,6 +11,7 @@ gem 'uglifier', '2.4.0'
 
 gem 'thin', '1.6.1'
 gem 'twitter', '5.8.0'
+gem 'therubyracer', '0.12.1' # for Heroku
 
 group :production, :staging do
   gem 'rails_12factor', '0.0.2' # for Heroku assets precompile
