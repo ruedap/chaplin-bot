@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.1'
 
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.1'
 gem 'pg', '0.17.1'
 
 gem 'jquery-rails', '3.1.0'
@@ -11,6 +11,7 @@ gem 'uglifier', '2.4.0'
 
 gem 'thin', '1.6.1'
 gem 'twitter', '5.8.0'
+gem 'therubyracer', '0.12.1' # for Heroku
 
 group :production, :staging do
   gem 'rails_12factor', '0.0.2' # for Heroku assets precompile
