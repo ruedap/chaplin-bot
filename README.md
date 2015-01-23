@@ -1,5 +1,4 @@
-# Chaplin [![Build Status](https://travis-ci.org/ruedap/chaplin.svg?branch=master)](https://travis-ci.org/ruedap/chaplin) [![Dependency Status](http://img.shields.io/gemnasium/ruedap/chaplin.svg?style=flat)](https://gemnasium.com/ruedap/chaplin)
-[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://ruedap.mit-license.org/2011)
+# Chaplin [![Build Status](https://travis-ci.org/ruedap/chaplin.svg?branch=master)](https://travis-ci.org/ruedap/chaplin) [![Dependency Status](http://img.shields.io/gemnasium/ruedap/chaplin.svg?style=flat)](https://gemnasium.com/ruedap/chaplin) [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://ruedap.mit-license.org/2011)
 
 Twitter bot for Chaplin's wise remarks (Japanese).
 
