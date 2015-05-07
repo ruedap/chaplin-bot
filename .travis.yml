@@ -1,16 +1,13 @@
 language: ruby
-rvm:
-- 2.2.2
+rvm: 2.2.2
+cache: bundler
+sudo: false
 bundler_args: --without development production staging
 before_script:
 - cp config/database.example.yml config/database.yml
 - bundle exec rake db:create db:migrate
 script:
 - bundle exec rake
-notifications:
-  hipchat:
-    rooms:
-      secure: SaT47XcSVYhU7MD2bPX3Bzx0W074fqd4ydaTI2c8qCXN23wMPdrVuUCx/6EnJT5JNlFffsyRilQu/88o4auhWOtjaOkORSSMJtZqZ+7eUnYoBfShhFJ1YzmAE4woHOGQSGcvQba1/ZI9G6uLe6izCRAIOZZTS7U2O4Cl4KkiWgU=
 deploy:
   provider: heroku
   api_key:
