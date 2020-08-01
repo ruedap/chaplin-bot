@@ -25,5 +25,8 @@
     "jest": "^26.2.2",
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "twitter": "^1.7.1"
   }
 }
