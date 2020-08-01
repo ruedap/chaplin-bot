@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "exec": "npx ncc run ./src/index.ts",
+    "tweet": "npx ncc run ./src/index.ts",
     "test": "jest"
   },
   "repository": {
@@ -22,12 +22,12 @@
     "@types/jest": "^26.0.8",
     "@types/node": "^14.0.27",
     "@types/twitter": "^1.7.0",
-    "@zeit/ncc": "^0.22.3",
     "jest": "^26.2.2",
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.7"
   },
   "dependencies": {
+    "@zeit/ncc": "^0.22.3",
     "twitter": "^1.7.1"
   }
 }
