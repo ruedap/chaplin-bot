@@ -1,4 +1,4 @@
-type TText = {
+export type TText = {
   id: number
   text: string
 }
@@ -13,5 +13,5 @@ export const getTodaysText = (date: Date) => {
   const _date = date.getDate()
   const text = texts.find((text) => text.id === _date)
 
-  return text ?? texts.find((text) => text.id === 31)
+  return text ?? texts[texts.length - 1]
 }
