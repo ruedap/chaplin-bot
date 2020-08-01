@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "exec": "npx ncc run ./src/index.ts",
     "test": "jest"
   },
   "repository": {
