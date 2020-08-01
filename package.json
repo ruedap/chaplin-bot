@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tweet": "npx ncc run ./src/index.ts",
+    "tweet:debug": "npx ncc run ./src/index.debug.ts",
     "test": "jest"
   },
   "repository": {
