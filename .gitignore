@@ -117,4 +117,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# Project
+.envrc
 _old_files/
