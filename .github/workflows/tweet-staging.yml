@@ -2,7 +2,8 @@ name: Tweet for @chaplin_staging
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    # 02:00 JST
+    - cron: '0 17 * * *'
 
 jobs:
   test:
