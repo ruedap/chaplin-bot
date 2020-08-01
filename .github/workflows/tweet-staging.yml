@@ -1,4 +1,4 @@
-name: Tweet for @chaplin_staging
+name: Tweet on @chaplin_staging
 
 on:
   schedule:
