@@ -1,6 +1,8 @@
-name: Test
+name: Tweet for @chaplin_staging
 
-on: [push]
+on:
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   test:
@@ -11,5 +13,4 @@ jobs:
         with:
           node-version: '12'
       - run: npm install
-      - run: npm test
-      - run: npm run tweet:debug
+      - run: npm run tweet
