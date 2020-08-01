@@ -5,4 +5,4 @@ type TText = {
 
 export type TTexts = Readonly<Array<TText>>
 
-export const getText = () => JSON.parse(Deno.readTextFileSync('./src/text.json')) as TTexts
+export const getTexts = () => JSON.parse(Deno.readTextFileSync('./src/text.json')) as TTexts
