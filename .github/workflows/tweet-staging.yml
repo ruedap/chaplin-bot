@@ -1,6 +1,8 @@
-name: Test
+name: Tweet for @chaplin_staging
 
-on: [push]
+on:
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   test:
@@ -11,8 +13,7 @@ jobs:
         with:
           node-version: '12'
       - run: npm install
-      - run: npm test
-      - run: npm run tweet -- --debug
+      - run: npm run tweet
         env:
           STAGING_TWITTER_CONSUMER_KEY: ${{ secrets.STAGING_TWITTER_CONSUMER_KEY }}
           STAGING_TWITTER_CONSUMER_SECRET: ${{ secrets.STAGING_TWITTER_CONSUMER_SECRET }}

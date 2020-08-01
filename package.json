@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tweet": "npx ncc run ./src/index.ts",
-    "tweet:debug": "npx ncc run ./src/index.debug.ts",
+    "build": "npx ncc build ./src/index.ts",
+    "tweet": "npm run build && node ./dist/index.js",
     "test": "jest"
   },
   "repository": {

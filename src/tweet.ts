@@ -1,17 +1,28 @@
+import { env } from "process";
 import Twitter from "twitter";
 
-const twitter = () => {
-  return new Twitter({
-    consumer_key: String(process.env.TWITTER_CONSUMER_KEY),
-    consumer_secret: String(process.env.TWITTER_CONSUMER_SECRET),
-    access_token_key: String(process.env.TWITTER_ACCESS_TOKEN_KEY),
-    access_token_secret: String(process.env.TWITTER_ACCESS_TOKEN_SECRET),
-  });
+const stagingOptiongs: Twitter.AccessTokenOptions = {
+  consumer_key: String(env.STAGING_TWITTER_CONSUMER_KEY),
+  consumer_secret: String(env.STAGING_TWITTER_CONSUMER_SECRET),
+  access_token_key: String(env.STAGING_TWITTER_ACCESS_TOKEN_KEY),
+  access_token_secret: String(env.STAGING_TWITTER_ACCESS_TOKEN_SECRET),
 };
 
-export const tweet = (text: string) => {
-  const t = twitter();
-  return t.post(
+const productionOptiongs: Twitter.AccessTokenOptions = {
+  consumer_key: String(env.PRODUCTION_TWITTER_CONSUMER_KEY),
+  consumer_secret: String(env.PRODUCTION_TWITTER_CONSUMER_SECRET),
+  access_token_key: String(env.PRODUCTION_TWITTER_ACCESS_TOKEN_KEY),
+  access_token_secret: String(env.PRODUCTION_TWITTER_ACCESS_TOKEN_SECRET),
+};
+
+export const options = (isProduction: boolean = false) =>
+  isProduction ? productionOptiongs : stagingOptiongs;
+
+export const twitter = (options: Twitter.AccessTokenOptions) =>
+  new Twitter(options);
+
+export const tweet = (twitter: Twitter, text: string) =>
+  twitter.post(
     "statuses/update",
     { status: text },
     function (error, tweet, response) {
@@ -22,4 +33,3 @@ export const tweet = (text: string) => {
       }
     },
   );
-};
