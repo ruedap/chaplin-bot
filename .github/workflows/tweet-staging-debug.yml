@@ -14,3 +14,8 @@ jobs:
           node-version: '12'
       - run: npm install
       - run: npm run tweet -- --debug
+        env:
+          STAGING_TWITTER_CONSUMER_KEY: ${{ secrets.STAGING_TWITTER_CONSUMER_KEY }}
+          STAGING_TWITTER_CONSUMER_SECRET: ${{ secrets.STAGING_TWITTER_CONSUMER_SECRET }}
+          STAGING_TWITTER_ACCESS_TOKEN_KEY: ${{ secrets.STAGING_TWITTER_ACCESS_TOKEN_KEY }}
+          STAGING_TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.STAGING_TWITTER_ACCESS_TOKEN_SECRET }}
