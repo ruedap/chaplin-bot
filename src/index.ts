@@ -1,5 +1,5 @@
 import { getTodaysText } from "./text";
+import { tweet } from "./tweet";
 
-const text = getTodaysText(new Date());
-
-console.log(text);
+const t = getTodaysText(new Date());
+tweet(t.text);
