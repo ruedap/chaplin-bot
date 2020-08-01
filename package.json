@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ruedap/chaplin/issues"
   },
-  "homepage": "https://github.com/ruedap/chaplin#readme"
+  "homepage": "https://github.com/ruedap/chaplin#readme",
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3"
+  }
 }
