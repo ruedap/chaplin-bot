@@ -1,13 +1,14 @@
-import { utcToZonedTime } from "date-fns-tz";
+import { Temporal } from "proposal-temporal";
 
-export const getTodayJST = (
-  dateUTC: Date = new Date(),
-  timeZone: string = "Asia/Tokyo",
+export const getToday = (
+  dateTime: Temporal.DateTime = Temporal.now.dateTime(),
+  timeZone: Temporal.TimeZone = Temporal.TimeZone.from("Asia/Tokyo"),
 ) => {
   console.log("tz", process.env.TZ);
-  console.log("dateUTC", dateUTC);
-  const dateJST = utcToZonedTime(dateUTC, timeZone);
-  console.log("dateJST", dateJST);
+  console.log("dateTime arg", dateTime);
+  // FIXME
+  const dateTimeJST = dateTime.toAbsolute(timeZone).toDateTime(timeZone);
+  console.log("dateTimeJST", dateTimeJST);
 
-  return dateJST;
+  return dateTimeJST;
 };

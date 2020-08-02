@@ -1,4 +1,5 @@
 import fs from "fs";
+import { Temporal } from "proposal-temporal";
 
 export type TText = {
   id: number;
@@ -13,10 +14,10 @@ export const getTexts = () => {
   return JSON.parse(str) as TTexts;
 };
 
-export const getTodaysText = (date: Date) => {
+export const getTodaysText = (dateTime: Temporal.DateTime) => {
   const texts = getTexts();
-  const _date = date.getDate();
-  const text = texts.find((text) => text.id === _date);
+  const day = dateTime.day;
+  const text = texts.find((text) => text.id === day);
 
   return text ?? texts[texts.length - 1];
 };
