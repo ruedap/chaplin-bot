@@ -1,0 +1,22 @@
+name: Tweet on @chaplin_bot
+
+on:
+  schedule:
+    # 09:00 JST
+    - cron: '0 0 * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - run: npm install
+      - run: npm run tweet -- --production
+        env:
+          PRODUCTION_TWITTER_CONSUMER_KEY: ${{ secrets.PRODUCTION_TWITTER_CONSUMER_KEY }}
+          PRODUCTION_TWITTER_CONSUMER_SECRET: ${{ secrets.PRODUCTION_TWITTER_CONSUMER_SECRET }}
+          PRODUCTION_TWITTER_ACCESS_TOKEN_KEY: ${{ secrets.PRODUCTION_TWITTER_ACCESS_TOKEN_KEY }}
+          PRODUCTION_TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.PRODUCTION_TWITTER_ACCESS_TOKEN_SECRET }}
