@@ -1,10 +1,11 @@
-import { getTodayJST } from "./date";
+import { Temporal } from "proposal-temporal";
+import { getToday } from "./date";
 
-test("getTodayJST()", () => {
-  const dateStr = "2020-08-01T23:00:00.000Z";
-  const date = new Date(dateStr);
-  const actual = getTodayJST(date);
-  const expected = new Date("2020-08-02T08:00:00.000Z");
+test("getToday()", () => {
+  const dateStr = "2020-08-01T23:00";
+  const dateTime = Temporal.DateTime.from(dateStr);
+  const actual = getToday(dateTime);
+  const expected = Temporal.DateTime.from("2020-08-02T08:00");
 
-  expect(actual).toMatchObject(expected);
+  expect(actual.toString()).toBe(expected.toString());
 });
