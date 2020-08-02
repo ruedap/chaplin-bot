@@ -1,4 +1,4 @@
-name: Tweet(debug) for @chaplin_staging
+name: Tweet(debug) on @chaplin_staging
 
 on:
   schedule:

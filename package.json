@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npx ncc build ./src/index.ts",
-    "tweet": "npm run build && node ./dist/index.js",
+    "tweet": "npm run build && TZ='UTC' node ./dist/index.js",
+    "tweet:debug": "npm run tweet -- --debug",
     "test": "jest"
   },
   "repository": {
@@ -29,6 +30,8 @@
   },
   "dependencies": {
     "@zeit/ncc": "^0.22.3",
+    "date-fns": "^2.15.0",
+    "date-fns-tz": "^1.0.10",
     "twitter": "^1.7.1"
   }
 }
