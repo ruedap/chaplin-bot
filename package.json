@@ -21,12 +21,12 @@
   },
   "homepage": "https://github.com/ruedap/chaplin#readme",
   "devDependencies": {
-    "@types/jest": "^26.0.8",
-    "@types/node": "^14.0.27",
-    "@types/twitter": "^1.7.0",
-    "jest": "^26.2.2",
-    "ts-jest": "^26.1.4",
-    "typescript": "^3.9.7"
+    "@types/jest": "26.0.8",
+    "@types/node": "14.0.27",
+    "@types/twitter": "1.7.0",
+    "jest": "26.2.2",
+    "ts-jest": "26.1.4",
+    "typescript": "3.9.7"
   },
   "dependencies": {
     "@zeit/ncc": "^0.22.3",
