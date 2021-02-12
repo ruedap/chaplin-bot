@@ -26,7 +26,7 @@
     "@types/twitter": "1.7.0",
     "jest": "26.6.3",
     "ts-jest": "26.3.0",
-    "typescript": "4.1.3"
+    "typescript": "4.1.5"
   },
   "dependencies": {
     "@zeit/ncc": "^0.22.3",
