@@ -9,7 +9,7 @@ test("getTexts", () => {
 });
 
 test("getTodaysText: 2020-08-01", () => {
-  const dateTime = Temporal.DateTime.from("2020-08-01T00:00");
+  const dateTime = Temporal.PlainDateTime.from("2020-08-01T00:00");
   const actual: TText = getTodaysText(dateTime);
   const expected = {
     id: 1,
@@ -19,7 +19,7 @@ test("getTodaysText: 2020-08-01", () => {
 });
 
 test("getTodaysText: 2021-01-31", () => {
-  const dateTime = Temporal.DateTime.from("2021-01-31T00:00");
+  const dateTime = Temporal.PlainDateTime.from("2021-01-31T00:00");
   const actual: TText = getTodaysText(dateTime);
   const expected = { id: 31, text: "私の最高傑作は次回作だ。" };
   expect(actual).toMatchObject(expected);
