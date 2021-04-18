@@ -8,7 +8,14 @@ const isProduction = args.some((arg) => arg === "--production");
 const isDebug = !isProduction && args.some((arg) => arg === "--debug");
 
 const t = twitter(options(isProduction));
-let text = getTodaysText(getToday()).text;
-text = isDebug ? `${text} [debug:${Temporal.now.instant()}]` : text;
+const zonedDateTime = getToday();
+const text = getTodaysText(zonedDateTime).text;
+const formatOptions: Intl.DateTimeFormatOptions = {
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit'
+}
+const _tweet = isDebug ? `${text} [${zonedDateTime.toLocaleString(undefined, formatOptions)}]` : text;
 
-tweet(t, text);
+tweet(t, _tweet);
