@@ -8,6 +8,7 @@ export const getToday = (
   console.log("dateTime UTC:", dateTimeUTC);
 
   const dateTimeJST = dateTimeUTC.withTimeZone(timeZone)
+  console.log("dateTime JST:", dateTimeJST);
 
   return dateTimeJST;
 };
