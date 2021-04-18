@@ -1,37 +1,33 @@
 import { env } from "process";
-import Twitter from "twitter";
+import { TwitterClient } from 'twitter-api-client';
 
-const stagingOptions: Twitter.AccessTokenOptions = {
-  consumer_key: String(env.STAGING_TWITTER_CONSUMER_KEY),
-  consumer_secret: String(env.STAGING_TWITTER_CONSUMER_SECRET),
-  access_token_key: String(env.STAGING_TWITTER_ACCESS_TOKEN_KEY),
-  access_token_secret: String(env.STAGING_TWITTER_ACCESS_TOKEN_SECRET),
+const stagingOptions = {
+  apiKey: String(env.STAGING_TWITTER_CONSUMER_KEY),
+  apiSecret: String(env.STAGING_TWITTER_CONSUMER_SECRET),
+  accessToken: String(env.STAGING_TWITTER_ACCESS_TOKEN_KEY),
+  accessTokenSecret: String(env.STAGING_TWITTER_ACCESS_TOKEN_SECRET),
 };
 
-const productionOptions: Twitter.AccessTokenOptions = {
-  consumer_key: String(env.PRODUCTION_TWITTER_CONSUMER_KEY),
-  consumer_secret: String(env.PRODUCTION_TWITTER_CONSUMER_SECRET),
-  access_token_key: String(env.PRODUCTION_TWITTER_ACCESS_TOKEN_KEY),
-  access_token_secret: String(env.PRODUCTION_TWITTER_ACCESS_TOKEN_SECRET),
+const productionOptions = {
+  apiKey: String(env.PRODUCTION_TWITTER_CONSUMER_KEY),
+  apiSecret: String(env.PRODUCTION_TWITTER_CONSUMER_SECRET),
+  accessToken: String(env.PRODUCTION_TWITTER_ACCESS_TOKEN_KEY),
+  accessTokenSecret: String(env.PRODUCTION_TWITTER_ACCESS_TOKEN_SECRET),
 };
 
-export const options = (isProduction: boolean = false) =>
-  isProduction ? productionOptions : stagingOptions;
+export const twitter = (isProduction: boolean = false) => {
+  const options = isProduction ? productionOptions : stagingOptions;
 
-export const twitter = (options: Twitter.AccessTokenOptions) =>
-  new Twitter(options);
+  return new TwitterClient(options);
+}
 
-export const tweet = (twitter: Twitter, text: string) =>
-  twitter.post(
-    "statuses/update",
-    { status: text },
-    function (error, tweet, response) {
-      if (!error) {
-        console.log("[tweet success]:", tweet);
-        console.log("[tweet text]:", text);
-      } else {
-        console.log("[tweet failure]:", error);
-        console.log("[tweet text]:", text);
-      }
-    },
-  );
+export const tweet = async (twitter: TwitterClient, text: string) => {
+  try {
+    await twitter.tweets.statusesUpdate(
+      { status: text },
+    );
+  } catch(error) {
+    console.log(error);
+    throw error;
+  }
+}
