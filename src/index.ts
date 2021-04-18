@@ -13,6 +13,7 @@ const text = getTodaysText(zonedDateTime).text;
 const formatOptions: Intl.DateTimeFormatOptions = {
   day: '2-digit',
   hour: '2-digit',
+  hour12: false,
   minute: '2-digit',
   second: '2-digit'
 }
