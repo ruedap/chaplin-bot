@@ -7,7 +7,7 @@
     "build": "npx ncc build ./src/index.ts",
     "tweet": "npm run build && TZ='UTC' node ./dist/index.js",
     "tweet:debug": "npm run tweet -- --debug",
-    "test": "jest"
+    "test": "npx tsc && jest"
   },
   "repository": {
     "type": "git",
