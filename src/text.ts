@@ -14,9 +14,9 @@ export const getTexts = () => {
   return JSON.parse(str) as TTexts;
 };
 
-export const getTodaysText = (dateTime: Temporal.DateTime) => {
+export const getTodaysText = (zonedDateTime: Temporal.ZonedDateTime) => {
   const texts = getTexts();
-  const day = dateTime.day;
+  const day = zonedDateTime.day;
   const text = texts.find((text) => text.id === day);
 
   return text ?? texts[texts.length - 1];

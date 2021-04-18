@@ -2,10 +2,10 @@ import { Temporal } from "proposal-temporal";
 import { getToday } from "./date";
 
 test("getToday()", () => {
-  const dateStr = "2020-08-01T23:00";
-  const dateTime = Temporal.DateTime.from(dateStr);
-  const actual = getToday(dateTime);
-  const expected = Temporal.DateTime.from("2020-08-02T08:00");
+  const zonedDateTimeUTC = '2019-12-31T23:00:00+00:00[UTC]'
+  const zonedDateTimeJST = '2020-01-01T08:00:00+09:00[Asia/Tokyo]'
+  const zonedDateTime = Temporal.ZonedDateTime.from(zonedDateTimeUTC)
+  const actual = getToday(zonedDateTime);
 
-  expect(actual.toString()).toBe(expected.toString());
+  expect(actual.toString()).toBe(zonedDateTimeJST);
 });
