@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/ruedap/chaplin-bot#readme",
   "devDependencies": {
-    "@types/jest": "26.0.23",
+    "@types/jest": "26.0.24",
     "@types/node": "14.14.45",
     "jest": "26.6.3",
     "ts-jest": "26.5.6",
